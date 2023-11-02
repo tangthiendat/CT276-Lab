@@ -238,6 +238,7 @@ public class HangHoa extends javax.swing.JFrame {
     public boolean isValidDate(String input){
         try {
             SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            df.setLenient(false);
             Date currentDay = new Date();
             String currentDayCheck = df.format(currentDay);
             Date date = df.parse(input);
