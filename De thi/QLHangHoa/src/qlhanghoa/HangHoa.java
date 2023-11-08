@@ -240,9 +240,8 @@ public class HangHoa extends javax.swing.JFrame {
             SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
             df.setLenient(false);
             Date currentDay = new Date();
-            String currentDayCheck = df.format(currentDay);
-            Date date = df.parse(input);
-            if(currentDayCheck.equals(df.format(date)) || date.after(currentDay)){
+            Date dateInput = df.parse(input);
+            if(df.format(dateInput).equals(df.format(currentDay)) || dateInput.after(currentDay)){
                 return true;
             }
         } catch (ParseException ex) {
